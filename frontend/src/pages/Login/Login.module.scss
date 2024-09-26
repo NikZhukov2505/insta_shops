@@ -1,0 +1,189 @@
+@import '../../SCSS/mixins';
+
+.login {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	z-index: 1000;
+	background-color: #5c5c5c96;
+	backdrop-filter: blur(5px);
+
+	.modal_login {
+		width: 650px;
+		padding: 32px;
+		background-color: #fff;
+		border-radius: 24px;
+		cursor: default;
+
+		@include mobileM {
+			padding: 15px;
+		}
+
+		.form {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			.closed {
+				display: none;
+			}
+
+			& h2 {
+				color: rgb(3, 3, 3);
+				font-size: 32px;
+				font-weight: 600;
+				line-height: 30px;
+				letter-spacing: 0px;
+				text-align: left;
+				@include rubik600;
+
+				@include mobileM {
+					font-size: 26px;
+				}
+			}
+
+			.username {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+				margin-bottom: 20px;
+
+				& h3 {
+					color: rgb(3, 3, 3);
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 20px;
+					letter-spacing: 0px;
+					text-align: left;
+					@include rubik500;
+				}
+
+				.error_text {
+					color: red;
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 20px;
+					letter-spacing: 0px;
+					text-align: left;
+					@include rubik500;
+				}
+
+				.input_username {
+					width: 100%;
+					height: 38px;
+					@include montserrat400;
+				}
+			}
+
+			.password {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+
+				& h3 {
+					color: rgb(3, 3, 3);
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 20px;
+					letter-spacing: 0px;
+					text-align: left;
+					@include rubik500;
+				}
+
+				.error_text {
+					color: red;
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 20px;
+					letter-spacing: 0px;
+					text-align: left;
+					@include rubik500;
+				}
+
+				.input_password {
+					// height: 53px;
+					@include montserrat400;
+				}
+			}
+
+			.bottom_login {
+				width: 100%;
+				height: 30%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				.error_text {
+					color: rgb(248, 60, 60);
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 20px;
+					letter-spacing: 0px;
+					text-align: left;
+					@include rubik500;
+				}
+
+				button {
+					border-radius: 24px;
+					background: rgb(21, 21, 21);
+					width: 165px;
+					display: flex;
+					padding: 10px;
+					// padding: 10px;
+					justify-content: center;
+					align-items: center;
+					gap: 10px;
+					color: rgb(255, 255, 255);
+					font-family: 'Poppins', sans-serif;
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 19px;
+					letter-spacing: 0px;
+					text-align: left;
+					@include rubik500;
+
+					@include mobileM {
+						width: 100%;
+					}
+				}
+
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.modal_login {
+			width: 95%;
+
+			.form {
+				.closed {
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					font-size: 30px;
+					cursor: pointer;
+				}
+
+				.bottom_login {
+					flex-direction: column;
+					align-items: end;
+					gap: 15px;
+
+					.error_text {
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}

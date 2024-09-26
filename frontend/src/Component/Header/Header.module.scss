@@ -1,0 +1,127 @@
+@import '../../SCSS/mixins';
+
+.header {
+	max-width: 100%;
+	box-shadow: 0px 7px 5px -3px rgba(0, 0, 0, 0.25);
+	margin-bottom: 25px;
+
+	.in_header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100px;
+
+		& .running_goose {
+			flex: 0 1 65%;
+			height: 80px;
+			display: flex;
+			align-items: flex-end;
+			overflow: hidden;
+			position: relative;
+
+			& img {
+				width: 100px;
+				height: 80px;
+				position: absolute;
+				bottom: 0;
+				left: -40px;
+				animation: goose 4s infinite ease-out;
+
+				@keyframes goose {
+					0% {
+						left: -40px;
+					}
+
+					100% {
+						left: 100%
+					}
+				}
+			}
+		}
+
+		.title_header {
+			display: flex;
+			align-items: end;
+			gap: 10px;
+
+			@include mobileL {
+				gap: 0px;
+			}
+
+			.title {
+				font-size: 24px;
+				font-weight: 500;
+				line-height: 130%;
+				letter-spacing: 0%;
+				text-align: center;
+				color: #000;
+				@include rubik500;
+
+				@include mobileM {
+					font-size: 16px;
+				}
+			}
+
+			.logo {
+				width: 200px;
+				// height: 70px;
+			}
+		}
+
+		.header_profile {
+			display: flex;
+			align-items: center;
+			gap: 30px;
+			cursor: pointer;
+
+			.login {
+				font-size: 24px;
+				font-weight: 500;
+				line-height: 130%;
+				letter-spacing: 0%;
+				text-align: center;
+				color: #000;
+				@include rubik500;
+
+				@include mobileM {
+					font-size: 16px;
+				}
+			}
+
+			.user_data {
+				display: flex;
+				gap: 20px;
+				align-items: center;
+
+				.nick_name {
+					font-size: 24px;
+					font-weight: 500;
+					line-height: 130%;
+					letter-spacing: 0%;
+					text-align: center;
+					color: #000;
+					@include rubik500;
+
+					@include mobileL {
+						display: none;
+					}
+				}
+
+				.avatar {
+					width: 45px;
+					height: 45px;
+					border-radius: 50%;
+					overflow: hidden;
+					box-shadow: 0px 0px 5px 1px#00000069;
+
+					& img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						object-position: center;
+					}
+				}
+			}
+		}
+	}
+}

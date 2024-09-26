@@ -1,0 +1,200 @@
+@import '../../../SCSS/mixins';
+
+.add_form {
+	display: flex;
+	flex-direction: column;
+	gap: 70px;
+	width: 100%;
+
+	@include mobileL {
+		gap: 20px;
+	}
+
+
+	.field_to_fill {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+
+		@include mobileL {
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		.left_part {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			width: 49%;
+
+			@include mobileL {
+				width: 100%;
+			}
+
+			.left_part_field {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+
+				& h2 {
+					color: rgb(3, 3, 3);
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 20px;
+					letter-spacing: 0px;
+					text-align: left;
+					width: 100%;
+					@include rubik500
+				}
+
+				.text_field {
+					box-sizing: border-box;
+					border: 1px solid rgb(33, 33, 33);
+					border-radius: 4px;
+					width: 100%;
+					color: rgb(3, 3, 3);
+					font-family: Roboto;
+					font-size: 12px;
+					font-weight: 400;
+					line-height: 14px;
+					letter-spacing: 0px;
+					text-align: left;
+					padding: 12px 6px 12px 6px;
+					@include montserrat400
+				}
+
+				.description {
+					box-sizing: border-box;
+					border: 1px solid rgb(33, 33, 33);
+					padding: 12px 6px 12px 6px;
+					border-radius: 4px;
+					resize: none;
+				}
+			}
+
+			.error_text {
+				& h2 {
+					color: rgb(241, 62, 62);
+				}
+
+				.text_field,
+				.description {
+					border: 1.5px solid rgb(241, 62, 62);
+				}
+			}
+		}
+
+		.right_part {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			width: 49%;
+
+			@include mobileL {
+				width: 100%;
+			}
+
+			.right_part_field {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+
+				& h2 {
+					color: rgb(3, 3, 3);
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 20px;
+					letter-spacing: 0px;
+					text-align: left;
+					width: 100%;
+				}
+
+				.category,
+				.subcategory {
+					box-sizing: border-box;
+					border: 1px solid rgb(33, 33, 33);
+					border-radius: 4px;
+					width: 100%;
+					color: rgb(3, 3, 3);
+					font-size: 12px;
+					font-weight: 400;
+					line-height: 14px;
+					letter-spacing: 0px;
+					text-align: left;
+					padding: 12px 6px 12px 6px;
+					appearance: none;
+					background-color: #fff;
+					background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9bw6hBsfSPkaEUU6g7ydUhWhTjjp6xW6pGrTGlyEkSPJf7bqp8n0eaNyP3Cj-d1yrIpg&usqp=CAU'), linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+					background-repeat: no-repeat, repeat;
+					background-position: right .5em top 50%, 0 0;
+					background-size: 1.2em auto, 100%;
+					cursor: pointer;
+					@include montserrat400
+				}
+			}
+		}
+
+		.error_text {
+			& h2 {
+				color: rgb(241, 62, 62);
+			}
+
+			.text_field {
+				border: 1.5px solid rgb(241, 62, 62);
+			}
+		}
+	}
+
+	.button_form {
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		gap: 20px;
+
+		@include mobileL {
+			flex-direction: column;
+			gap: 10px;
+			width: 100%;
+		}
+
+		& h2 {
+			color: rgb(241, 62, 62);
+			font-size: 22px;
+			font-weight: 500;
+			line-height: 20px;
+			letter-spacing: 0px;
+			text-align: right;
+			width: 100%;
+			@include montserrat600;
+
+			@include mobileM {
+				font-size: 20px;
+			}
+
+			@include mobileL {
+				text-align: center;
+			}
+		}
+
+		& button {
+			border-radius: 24px;
+			padding: 10px 50px;
+			background: rgb(21, 21, 21);
+			color: rgb(255, 255, 255);
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 19px;
+			letter-spacing: 0px;
+			text-align: left;
+			@include rubik500;
+
+			@include mobileL {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}
